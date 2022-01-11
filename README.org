@@ -1,0 +1,23 @@
+* =org-parser= shadow-cljs demo
+
+Sample project to demo the issue discussed in
+https://github.com/200ok-ch/org-parser/issues/61.
+
+** Development
+
+The project was created by following the [[https://github.com/thheller/shadow-cljs][shadow-cljs documentation]].
+
+1. =npx create-cljs-project acme-app=
+2. Create minimal http server and web client config in =shadow-cljs.edn=
+   and =main/acme/frontend/app.cljs=
+3. Edit shadow-cljs.edn and add [org-parser "0.1.27-SNAPSHOT"] under =dependencies=
+
+Then, install org-parser locally, so you can test out different
+scenarios: =lein uberjar; lein install=
+
+Finally, start the shadow-cljs project: =npx shadow-cljs watch
+frontend=.
+
+With org-parser =master=, the project starts, but the org-parser code
+does not run. When visiting http://localhost:8080, there is an error
+in the JS console.
